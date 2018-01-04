@@ -85,6 +85,7 @@ If you are on another branch and want to add that branch to github, when you go 
 `git push -u origin <branch>` - will push and connect/create to a branch on github
 `git push` - adds the commits and updates your remote github repository
 `git push -f` - will push to github, -f means it will force the push. So if you get any issues where it wants you to pull from your repo and you know that your repo is current and working, you can override this step by adding `-f` to your push. (use with caution)
+`git merge <branch>` - will merge the `current branch` and the specified `<branch>`. Usually we merge to master as master is what keeps all of our updates. So if we just updated our `nav` branch. We could `git co master` and then `git merge nav` to merge those changes.
 
 #### terminal commands
 `cd <folder name>` - will place you inside of a folder in your project
