@@ -75,20 +75,39 @@ After it's been connected you can simply `git push` which will automatically pus
 If you are on another branch and want to add that branch to github, when you go to push in that branch you'll want to `git push -u origin master` for the first push to set it's upstream to that branch. It's a way of connecting branches.
 
 #### GIT Cheatsheet
-
-`git init` - creates .git in your local project
-`git add .` - adds all files
-`git add <filename>` - adds a particular file
-`git commit -m 'message'` - adds a commit, (can only be done after adding files)
-`git remote add <destination> <github url>` - will add the the push / pull destination to your project
-`git remote set-url <destination> <github url>` - will override the original destination to your project
-`git push -u origin <branch>` - will push and connect/create to a branch on github
-`git push` - adds the commits and updates your remote github repository
-`git push -f` - will push to github, -f means it will force the push. So if you get any issues where it wants you to pull from your repo and you know that your repo is current and working, you can override this step by adding `-f` to your push. (use with caution)
-`git merge <branch>` - will merge the `current branch` and the specified `<branch>`. Usually we merge to master as master is what keeps all of our updates. So if we just updated our `nav` branch. We could `git co master` and then `git merge nav` to merge those changes.
+```
+git init - creates .git in your local project
+git branch - view branches
+git co -b <branch> - create branch and check out to branch
+git co <branch> - Check out to branch
+git add . - adds all files
+git add <filename> - adds a particular file
+git status - view all the files that are staged for a commit
+git commit -m 'message' - adds a commit, (can only be done after adding files)
+git log - view commit history
+git diff - view changes you have made
+git remote add <destination> <github url> - will add the the push / pull destination to your project
+git remote set-url <destination> <github url> - will override the original destination to your project
+git remote -v - view your remote destinations
+git push -u origin <branch> - will push and connect/create to a branch on github
+git push - adds the commits and updates your remote github repository
+git push -f - will push to github, -f means it will force the push. So if you get any issues where it wants you to pull from your repo and you know that your repo is current and working, you can override this step by adding `-f` to your push. (use with caution)
+git merge <branch> - will merge the `current branch` and the specified `<branch>`. Usually we merge to master as master is what keeps all of our updates. So if we just updated our `nav` branch. We could `git co master` and then `git merge nav` to merge those changes.
+```
 
 #### terminal commands
-`cd <folder name>` - will place you inside of a folder in your project
-`cd ..` - will go out of the folder in your project into the parent folder
-`touch <filename>` - will create a file in your project
-`mkdir <foldername>` - will create a folder in your project
+```
+cd <folder name> - will place you inside of a folder in your project
+cd .. - will go out of the folder in your project into the parent folder
+touch <filename> - will create a file in your project
+mkdir <foldername> - will create a folder in your project
+```
+
+#### manually fork / clone
+- Go to remote repository you want to make a copy of
+- Click on `fork`
+- Click on your profile pic
+- After it's forked and you see in blue `<your username>/<repo name>`, click on the green button `clone or download`
+- click on the clipboard to copy the url (make sure it's set to `ssh`)
+- in your terminal type `git clone <paste in the url>` for it to download (or clone) to your computer
+- cd into your project and enjoy!
