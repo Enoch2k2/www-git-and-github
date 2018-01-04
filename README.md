@@ -26,3 +26,68 @@ You can modify your github directly on github by clicking the edit button while 
 
 You can view all of your commits by clicking on the commits link above the branch dropdown (which is above the file tree) in github to view all of your commits done in that branch.
 
+Commit often!
+
+#### Git Commands
+
+The way we talk to our remote (github) repository is through git commands.
+
+We can easily connect a local repo to our github repo from our command line.
+
+The easiest way I've found to do it is to first initialize our local repository (local meaning the repo on our computer (not github))
+
+```
+mkdir new-project
+cd new-project
+git init
+```
+
+This will create a `.git` folder in our repository that will hold all of our repository data.
+
+Next we'll create a `README.md` that is used by github to describe our project.
+
+```
+touch README.md
+add some details to the README.md and save
+```
+
+Then you would want to add the files and create a commit message
+
+```
+git add .
+git commit -m 'initial commit'
+```
+
+Next you would want to create a github repository. If you navigate to your github, on the first page on the bottom right, you'll see a blue button `new repository`. When you click that, you would give it a name, a description (optional), and then click on create.
+
+Once the github repository has been created, search for the line in the first snippet that has `git remote add origin <your remote repo>`. Copy that line and paste it into your terminal. What this line does is connects your local repository to github.
+
+Lastely you would push your local copy to github.
+
+```
+git push -u origin master
+```
+
+This sets the upstream meaning that it's pushing your local files that have been commited to github. You can refresh your github repository and you'll see it's been updated! Setting the upstream during this push connects your master branch (local) to the master branch on github and will only need to be connected once. 
+
+After it's been connected you can simply `git push` which will automatically push to that branch.
+
+If you are on another branch and want to add that branch to github, when you go to push in that branch you'll want to `git push -u origin master` for the first push to set it's upstream to that branch. It's a way of connecting branches.
+
+#### GIT Cheatsheet
+
+`git init` - creates .git in your local project
+`git add .` - adds all files
+`git add <filename>` - adds a particular file
+`git commit -m 'message'` - adds a commit, (can only be done after adding files)
+`git remote add <destination> <github url>` - will add the the push / pull destination to your project
+`git remote set-url <destination> <github url>` - will override the original destination to your project
+`git push -u origin <branch>` - will push and connect/create to a branch on github
+`git push` - adds the commits and updates your remote github repository
+`git push -f` - will push to github, -f means it will force the push. So if you get any issues where it wants you to pull from your repo and you know that your repo is current and working, you can override this step by adding `-f` to your push. (use with caution)
+
+#### terminal commands
+`cd <folder name>` - will place you inside of a folder in your project
+`cd ..` - will go out of the folder in your project into the parent folder
+`touch <filename>` - will create a file in your project
+`mkdir <foldername>` - will create a folder in your project
